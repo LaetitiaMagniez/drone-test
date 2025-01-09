@@ -1,24 +1,9 @@
 kind: pipeline
 type: docker
-name: build-pipeline
+name: default
 
 steps:
-  - name: install-dependencies
-    image: node:16
+  - name: hello
+    image: alpine:latest
     commands:
-      - npm install
-
-  - name: build
-    image: node:16
-    commands:
-      - npm run build
-
-  - name: test
-    image: node:16
-    commands:
-      - npm test
-
-  - name: echo-success
-    image: alpine:3.18
-    commands:
-      - echo "Build and tests completed successfully!"
+      - echo "Hello, World!"
